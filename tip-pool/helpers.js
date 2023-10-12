@@ -1,4 +1,3 @@
-
 // accepts 'tipAmt', 'billAmt', 'tipPercent' and sums total from allPayments objects
 function sumPaymentTotal(type) {
   let total = 0;
@@ -23,4 +22,17 @@ function appendTd(tr, value) {
   newTd.innerText = value;
 
   tr.append(newTd);
+}
+
+// makes a adds a delete button to a table row
+function appendDeleteBtn(tr){
+  let deleteTd = document.createElement('td');
+  let btn = document.createElement('button');
+  btn.innerText = "X"
+  btn.addEventListener('click', function(e){
+    e.target.parentNode.parentNode.remove()
+  })
+  deleteTd.appendChild(btn);
+
+  tr.append(deleteTd);
 }
